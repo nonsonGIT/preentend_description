@@ -1,213 +1,316 @@
 <?xml version="1.0"?>
+
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
-    <xacro:macro name="robot_arm" params="prefix">
-        <link name="${prefix}_linear_axis_track_link">
-            <inertial>
-                <mass value="0.110667" />
-                <origin xyz="-8.67362e-18 -0.0747302 -8.32667e-17" rpy="0 -0 0" />
-                <inertia ixx="0.212684" ixy="0" ixz="0" iyy="0.212731" iyz="0" izz="0.000453068" />
-            </inertial>
-            <visual>
-                <origin xyz="0.0075 -0.0685027 -0.2" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/linear_axis_track_link.stl" scale="1 1 1" />
-                </geometry>
-                <material name="0.894118_0.894118_0.894118_0.000000_0.000000">
-                    <color rgba="0.894118 0.894118 0.894118 1" />
-                </material>
-            </visual>
-        </link>
-        <link name="${prefix}_linear_axis_carrier_link">
-            <inertial>
-                <mass value="0.0292796" />
-                <origin xyz="0.0900152 -0.108441 -0.221511" rpy="0 -0 0" />
-                <inertia ixx="0.000574223" ixy="7.05982e-08" ixz="2.25654e-08" iyy="0.000940785"
-                    iyz="-1.82245e-06" izz="0.000549286" />
-            </inertial>
-            <visual>
-                <origin xyz="0.106514 -0.115615 -0.239552" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/linear_axis_carrier_link.stl" scale="1 1 1" />
-                </geometry>
-                <material name="0.894118_0.894118_0.894118_0.000000_0.000000">
-                    <color rgba="0.894118 0.894118 0.894118 1" />
-                </material>
-            </visual>
-        </link>
-        <link name="${prefix}_base_link">
-            <inertial>
-                <mass value="0.00567944" />
-                <origin xyz="0.00144905 0.0379766 -0.00144905" rpy="0 -0 0" />
-                <inertia ixx="3.60174e-05" ixy="-4.73146e-08" ixz="-7.99858e-07" iyy="6.60525e-05"
-                    iyz="4.73146e-08" izz="3.60174e-05" />
-            </inertial>
-            <visual>
-                <origin xyz="0 0 0" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/base_link.stl" scale="1 1 1" />
-                </geometry>
-                <material name="0.121569_0.000000_0.027451_0.000000_0.000000">
-                    <color rgba="0.121569 0 0.027451 1" />
-                </material>
-            </visual>
-        </link>
-        <link name="${prefix}_link1">
-            <inertial>
-                <mass value="0.0191256" />
-                <origin xyz="-0.117995 0.129518 0.00778591" rpy="0 -0 0" />
-                <inertia ixx="0.000396669" ixy="0.000302002" ixz="1.93511e-05" iyy="0.000538894"
-                    iyz="-1.74559e-05" izz="0.000789234" />
-            </inertial>
-            <visual>
-                <origin xyz="-0.0589974 0.0447591 0.00389295" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/link1.stl" scale="1 1 1" />
-                </geometry>
-                <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
-                    <color rgba="1 1 0 1" />
-                </material>
-            </visual>
-        </link>
-        <link name="${prefix}_link2">
-            <inertial>
-                <mass value="0.00837477" />
-                <origin xyz="-0.29913 0.0723407 0.0189105" rpy="0 -0 0" />
-                <inertia ixx="2.1982e-05" ixy="-6.07057e-07" ixz="7.51189e-06" iyy="0.000611941"
-                    iyz="6.61128e-07" izz="0.000599434" />
-            </inertial>
-            <visual>
-                <origin xyz="-0.149564 0.0561702 0.00945553" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/link2.stl" scale="1 1 1" />
-                </geometry>
-                <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
-                    <color rgba="1 1 0 1" />
-                </material>
-            </visual>
-        </link>
-        <link name="${prefix}_link3">
-            <inertial>
-                <mass value="0.011799" />
-                <origin xyz="0.0527793 0.0786773 0.0924536" rpy="0 -0 0" />
-                <inertia ixx="0.000288926" ixy="-4.01186e-06" ixz="-3.51329e-06" iyy="0.00027606"
-                    iyz="-1.23516e-05" izz="6.25747e-05" />
-            </inertial>
-            <visual>
-                <origin xyz="0.0543897 0.0843386 -0.0037732" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/link3.stl" scale="1 1 1" />
-                </geometry>
-                <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
-                    <color rgba="1 1 0 1" />
-                </material>
-            </visual>
-        </link>
-        <link name="${prefix}_link4">
-            <inertial>
-                <mass value="0.00464246" />
-                <origin xyz="0.00018902 -3.07756e-05 0.17946" rpy="0 -0 0" />
-                <inertia ixx="4.42423e-05" ixy="6.22476e-11" ixz="-7.99269e-08" iyy="4.89754e-05"
-                    iyz="1.00313e-08" izz="1.78565e-05" />
-            </inertial>
-            <visual>
-                <origin xyz="9.47542e-05 -1.5431e-05 0.109729" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/link4.stl" scale="1 1 1" />
-                </geometry>
-                <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
-                    <color rgba="1 1 0 1" />
-                </material>
-            </visual>
-        </link>
-        <link name="${prefix}_link5">
-            <inertial>
-                <mass value="0.00262068" />
-                <origin xyz="0.0436739 -0.117525 -6.55607e-18" rpy="0 -0 0" />
-                <inertia ixx="1.10659e-05" ixy="1.00427e-07" ixz="0" iyy="7.38163e-06" iyz="0"
-                    izz="1.09578e-05" />
-            </inertial>
-            <visual>
-                <origin xyz="0.043837 -0.100762 -6.06011e-18" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/link5.stl" scale="1 1 1" />
-                </geometry>
-                <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
-                    <color rgba="1 1 0 1" />
-                </material>
-            </visual>
-        </link>
-        <link name="${prefix}_flange_link">
-            <inertial>
-                <mass value="0.000480412" />
-                <origin xyz="5.90649e-17 2.12759e-16 -0.00053649" rpy="0 -0 0" />
-                <inertia ixx="5.7962e-07" ixy="0" ixz="0" iyy="5.7962e-07" iyz="0" izz="9.95036e-07" />
-            </inertial>
-            <visual>
-                <origin xyz="2.92246e-17 1.06541e-16 -0.0102682" rpy="0 -0 0" />
-                <geometry>
-                    <mesh filename="package://preentend_description/meshes/flange_link.stl" scale="1 1 1" />
-                </geometry>
-                <material name="0.027451_0.000000_0.015686_0.000000_0.000000">
-                    <color rgba="0.027451 0 0.0156863 1" />
-                </material>
-            </visual>
-        </link>
+```
+<xacro:macro name="robot_arm" params="prefix">
 
-        <joint name="${prefix}_linear_axis_joint" type="prismatic">
-            <limit effort="1" velocity="1" lower="0" upper="4.362" />
-            <origin xyz="0.09 -0.084 -2.4" rpy="3.14159 8.88178e-16 -3.14159" />
-            <axis xyz="0 0 -1" />
-            <parent link="${prefix}_linear_axis_track_link" />
-            <child link="${prefix}_linear_axis_carrier_link" />
-        </joint>
-        <joint name="${prefix}_linear_axis_to_robot" type="fixed">
-            <origin xyz="0.0889924 -0.200528 -0.219" rpy="8.32667e-17 8.32667e-17 -3.14159" />
-            <axis xyz="0 -1 0" />
-            <parent link="${prefix}_linear_axis_carrier_link" />
-            <child link="${prefix}_base_link" />
-        </joint>
-        <joint name="${prefix}_joint1" type="revolute">
-            <limit effort="1" velocity="1" lower="${-pi}" upper="${pi}" />
-            <origin xyz="4.4474e-16 0.102 1.19904e-14" rpy="0 -1.5708 -3.67975e-16" />
-            <axis xyz="0 -1 0" />
-            <parent link="${prefix}_base_link" />
-            <child link="${prefix}_link1" />
-        </joint>
-        <joint name="${prefix}_joint2" type="revolute">
-            <limit effort="1" velocity="1" lower="${-0.5*pi}" upper="${0.5*pi}" />
-            <origin xyz="-0.3 0.28 2.62377e-17" rpy="-1.5708 -2.22045e-16 -1.5708" />
-            <axis xyz="0 -1 0" />
-            <parent link="${prefix}_link1" />
-            <child link="${prefix}_link2" />
-        </joint>
-        <joint name="${prefix}_joint3" type="revolute">
-            <limit effort="1" velocity="1" lower="${-0.25*pi}" upper="${1.25*pi}" />
-            <origin xyz="-0.7 7.37257e-18 0" rpy="3.14159 1.84741e-15 -1.5708" />
-            <axis xyz="-1 0 0" />
-            <parent link="${prefix}_link2" />
-            <child link="${prefix}_link3" />
-        </joint>
-        <joint name="${prefix}_joint4" type="revolute">
-            <limit effort="1" velocity="1" lower="${-pi}" upper="${pi}" />
-            <origin xyz="0.056 0.09 0.452" rpy="-4.95715e-15 7.22251e-16 3.14159" />
-            <axis xyz="0 0 -1" />
-            <parent link="${prefix}_link3" />
-            <child link="${prefix}_link4" />
-        </joint>
-        <joint name="${prefix}_joint5" type="revolute">
-            <limit effort="1" velocity="1" lower="${-pi}" upper="0" />
-            <origin xyz="-0.045 -6.13565e-05 0.270269" rpy="3.14159 -3.44022e-16 -1.1221e-16" />
-            <axis xyz="-1 -1.22465e-16 0" />
-            <parent link="${prefix}_link4" />
-            <child link="${prefix}_link5" />
-        </joint>
-        <joint name="${prefix}_joint6" type="revolute">
-            <limit effort="1" velocity="1" lower="${-pi}" upper="${pi}" />
-            <origin xyz="0.044 -0.2074 0" rpy="0 1.5708 -1.5708" />
-            <axis xyz="0 0 -1" />
-            <parent link="${prefix}_link5" />
-            <child link="${prefix}_flange_link" />
-        </joint>
-    </xacro:macro>
+    <link name="${prefix}_linear_axis_track_link">
+        <inertial>
+            <mass value="0.110667" />
+            <origin xyz="-8.67362e-18 -0.0747302 -8.32667e-17" rpy="0 -0 0" />
+            <inertia ixx="0.212684" ixy="0" ixz="0" iyy="0.212731" iyz="0" izz="0.000453068" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0075 -0.0685027 -0.2" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/linear_axis_track_link.stl" scale="1 1 1" />
+            </geometry>
+            <material name="0.894118_0.894118_0.894118_0.000000_0.000000">
+                <color rgba="0.894118 0.894118 0.894118 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0075 -0.0685027 -0.2" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/linear_axis_track_link.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="${prefix}_linear_axis_carrier_link">
+        <inertial>
+            <mass value="0.0292796" />
+            <origin xyz="0.0900152 -0.108441 -0.221511" rpy="0 -0 0" />
+            <inertia ixx="0.000574223" ixy="7.05982e-08" ixz="2.25654e-08" iyy="0.000940785"
+                iyz="-1.82245e-06" izz="0.000549286" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0.106514 -0.115615 -0.239552" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/linear_axis_carrier_link.stl" scale="1 1 1" />
+            </geometry>
+            <material name="0.894118_0.894118_0.894118_0.000000_0.000000">
+                <color rgba="0.894118 0.894118 0.894118 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0.106514 -0.115615 -0.239552" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/linear_axis_carrier_link.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="${prefix}_base_link">
+        <inertial>
+            <mass value="0.00567944" />
+            <origin xyz="0.00144905 0.0379766 -0.00144905" rpy="0 -0 0" />
+            <inertia ixx="3.60174e-05" ixy="-4.73146e-08" ixz="-7.99858e-07" iyy="6.60525e-05"
+                iyz="4.73158e-08" izz="3.60174e-05" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/base_link.stl" scale="1 1 1" />
+            </geometry>
+            <material name="0.121569_0.000000_0.027451_0.000000_0.000000">
+                <color rgba="0.121569 0 0.027451 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/base_link.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="${prefix}_link1">
+        <inertial>
+            <mass value="0.0191256" />
+            <origin xyz="-0.117995 0.129518 0.00778591" rpy="0 -0 0" />
+            <inertia ixx="0.000396669" ixy="0.000302002" ixz="1.93511e-05" iyy="0.000538894"
+                iyz="-1.74559e-05" izz="0.000789234" />
+        </inertial>
+
+        <visual>
+            <origin xyz="-0.0589974 0.0447591 0.00389295" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link1.stl" scale="1 1 1" />
+            </geometry>
+            <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
+                <color rgba="1 1 0 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="-0.0589974 0.0447591 0.00389295" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link1.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="${prefix}_link2">
+        <inertial>
+            <mass value="0.00837477" />
+            <origin xyz="-0.29913 0.0723407 0.0189105" rpy="0 -0 0" />
+            <inertia ixx="2.1982e-05" ixy="-6.07057e-07" ixz="7.51189e-06" iyy="0.000611941"
+                iyz="6.61128e-07" izz="0.000599434" />
+        </inertial>
+
+        <visual>
+            <origin xyz="-0.149564 0.0561702 0.00945553" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link2.stl" scale="1 1 1" />
+            </geometry>
+            <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
+                <color rgba="1 1 0 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="-0.149564 0.0561702 0.00945553" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link2.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="${prefix}_link3">
+        <inertial>
+            <mass value="0.011799" />
+            <origin xyz="0.0527793 0.0786773 0.0924536" rpy="0 -0 0" />
+            <inertia ixx="0.000288926" ixy="-4.01186e-06" ixz="-3.51329e-06" iyy="0.00027606"
+                iyz="-1.23516e-05" izz="6.25747e-05" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0543897 0.0843386 -0.0037732" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link3.stl" scale="1 1 1" />
+            </geometry>
+            <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
+                <color rgba="1 1 0 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0543897 0.0843386 -0.0037732" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link3.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="${prefix}_link4">
+        <inertial>
+            <mass value="0.00464246" />
+            <origin xyz="0.00018902 -3.07756e-05 0.17946" rpy="0 -0 0" />
+            <inertia ixx="4.42423e-05" ixy="6.22476e-11" ixz="-7.99269e-08" iyy="4.89754e-05"
+                iyz="1.00313e-08" izz="1.78565e-05" />
+        </inertial>
+
+        <visual>
+            <origin xyz="9.47542e-05 -1.5431e-05 0.109729" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link4.stl" scale="1 1 1" />
+            </geometry>
+            <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
+                <color rgba="1 1 1 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="9.47542e-05 -1.5431e-05 0.109729" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link4.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="${prefix}_link5">
+        <inertial>
+            <mass value="0.00262068" />
+            <origin xyz="0.0436739 -0.117525 -6.55607e-18" rpy="0 -0 0" />
+            <inertia ixx="1.10659e-05" ixy="1.00427e-07" ixz="0" iyy="7.38163e-06" iyz="0"
+                izz="1.09578e-05" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0.043837 -0.100762 -6.06011e-18" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link5.stl" scale="1 1 1" />
+            </geometry>
+            <material name="1.000000_1.000000_0.000000_0.000000_0.000000">
+                <color rgba="1 1 0 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0.043837 -0.100762 -6.06011e-18" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/link5.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="${prefix}_flange_link">
+        <inertial>
+            <mass value="0.000480412" />
+            <origin xyz="5.90649e-17 2.12759e-16 -0.00053649" rpy="0 -0 0" />
+            <inertia ixx="5.7962e-07" ixy="0" ixz="0" iyy="5.7962e-07" iyz="0" izz="9.95036e-07" />
+        </inertial>
+
+        <visual>
+            <origin xyz="2.92246e-17 1.06541e-16 -0.0102682" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/flange_link.stl" scale="1 1 1" />
+            </geometry>
+            <material name="0.027451_0.000000_0.015686_0.000000_0.000000">
+                <color rgba="0.027451 0 0.0156863 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="2.92246e-17 1.06541e-16 -0.0102682" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://preentend_description/meshes/flange_link.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <joint name="${prefix}_linear_axis_joint" type="prismatic">
+        <limit effort="1" velocity="1" lower="0" upper="4.362" />
+        <origin xyz="0.09 -0.084 -2.4" rpy="3.14159 8.88178e-16 -3.14159" />
+        <axis xyz="0 0 -1" />
+        <parent link="${prefix}_linear_axis_track_link" />
+        <child link="${prefix}_linear_axis_carrier_link" />
+    </joint>
+
+    <joint name="${prefix}_linear_axis_to_robot" type="fixed">
+        <origin xyz="0.0889924 -0.200528 -0.219" rpy="8.32667e-17 8.32667e-17 -3.14159" />
+        <axis xyz="0 -1 0" />
+        <parent link="${prefix}_linear_axis_carrier_link" />
+        <child link="${prefix}_base_link" />
+    </joint>
+
+    <joint name="${prefix}_joint1" type="revolute">
+        <limit effort="1" velocity="1" lower="${-pi}" upper="${pi}" />
+        <origin xyz="4.4474e-16 0.102 1.19904e-14" rpy="0 -1.5708 -3.67975e-16" />
+        <axis xyz="0 -1 0" />
+        <parent link="${prefix}_base_link" />
+        <child link="${prefix}_link1" />
+    </joint>
+
+    <joint name="${prefix}_joint2" type="revolute">
+        <limit effort="1" velocity="1" lower="${-0.5*pi}" upper="${0.5*pi}" />
+        <origin xyz="-0.3 0.28 2.62377e-17" rpy="-1.5708 -2.22045e-16 -1.5708" />
+        <axis xyz="0 -1 0" />
+        <parent link="${prefix}_link1" />
+        <child link="${prefix}_link2" />
+    </joint>
+
+    <joint name="${prefix}_joint3" type="revolute">
+        <limit effort="1" velocity="1" lower="${-0.25*pi}" upper="${1.25*pi}" />
+        <origin xyz="-0.7 7.37257e-18 0" rpy="3.14159 1.84741e-15 -1.5708" />
+        <axis xyz="-1 0 0" />
+        <parent link="${prefix}_link2" />
+        <child link="${prefix}_link3" />
+    </joint>
+
+    <joint name="${prefix}_joint4" type="revolute">
+        <limit effort="1" velocity="1" lower="${-pi}" upper="${pi}" />
+        <origin xyz="0.056 0.09 0.452" rpy="-4.95715e-15 7.22251e-16 3.14159" />
+        <axis xyz="0 0 -1" />
+        <parent link="${prefix}_link3" />
+        <child link="${prefix}_link4" />
+    </joint>
+
+    <joint name="${prefix}_joint5" type="revolute">
+        <limit effort="1" velocity="1" lower="${-pi}" upper="0" />
+        <origin xyz="-0.045 -6.13565e-05 0.270269" rpy="3.14159 -3.44022e-16 -1.1221e-16" />
+        <axis xyz="-1 -1.22465e-16 0" />
+        <parent link="${prefix}_link4" />
+        <child link="${prefix}_link5" />
+    </joint>
+
+    <joint name="${prefix}_joint6" type="revolute">
+        <limit effort="1" velocity="1" lower="${-pi}" upper="${pi}" />
+        <origin xyz="0.044 -0.2074 0" rpy="0 1.5708 -1.5708" />
+        <axis xyz="0 0 -1" />
+        <parent link="${prefix}_link5" />
+        <child link="${prefix}_flange_link" />
+    </joint>
+
+</xacro:macro>
+```
+
 </robot>
+
